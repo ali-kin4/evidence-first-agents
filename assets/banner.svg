@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence First Agents</title>
+  <desc id="desc">Agent configuration flows through inventory and boundaries to an inspectable decision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#102f3b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#37d6c0"/>
+      <stop offset="1" stop-color="#75a7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="360" rx="28" fill="url(#bg)"/>
+  <g opacity=".16" fill="none" stroke="#8edfd3">
+    <path d="M0 70h250l60 55h215"/>
+    <path d="M1280 290h-250l-60-55H755"/>
+    <circle cx="310" cy="125" r="5" fill="#8edfd3"/>
+    <circle cx="970" cy="235" r="5" fill="#8edfd3"/>
+  </g>
+  <g transform="translate(82 84)">
+    <rect width="204" height="192" rx="24" fill="#0d2634" stroke="#2c6570"/>
+    <text x="28" y="48" fill="#85aeb9" font-family="Arial, sans-serif" font-size="16" letter-spacing="2">INPUTS</text>
+    <text x="28" y="86" fill="#f4fbff" font-family="Arial, sans-serif" font-size="21">Instructions</text>
+    <text x="28" y="119" fill="#f4fbff" font-family="Arial, sans-serif" font-size="21">Skills + MCP</text>
+    <text x="28" y="152" fill="#f4fbff" font-family="Arial, sans-serif" font-size="21">Capabilities</text>
+  </g>
+  <path d="M304 180h90" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="350" cy="180" r="8" fill="#37d6c0"/>
+  <g transform="translate(410 61)">
+    <rect width="458" height="238" rx="28" fill="#0a2130" stroke="#37d6c0" stroke-width="2"/>
+    <text x="36" y="60" fill="#37d6c0" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2">EVIDENCE FIRST</text>
+    <text x="36" y="114" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="700">AGENTS</text>
+    <text x="36" y="158" fill="#a7c7d0" font-family="Arial, sans-serif" font-size="20">Inventory. Boundaries. Decision.</text>
+    <rect x="36" y="184" width="118" height="32" rx="16" fill="#153c47"/>
+    <text x="57" y="206" fill="#8ef3df" font-family="Arial, sans-serif" font-size="14" font-weight="700">NO MODEL CALLS</text>
+    <rect x="168" y="184" width="116" height="32" rx="16" fill="#153c47"/>
+    <text x="190" y="206" fill="#8ef3df" font-family="Arial, sans-serif" font-size="14" font-weight="700">NO EXECUTION</text>
+  </g>
+  <path d="M886 180h90" stroke="url(#line)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="930" cy="180" r="8" fill="#75a7ff"/>
+  <g transform="translate(994 84)">
+    <rect width="204" height="192" rx="24" fill="#0d2634" stroke="#2c6570"/>
+    <text x="28" y="48" fill="#85aeb9" font-family="Arial, sans-serif" font-size="16" letter-spacing="2">DECISION</text>
+    <text x="28" y="92" fill="#72e3cf" font-family="Arial, sans-serif" font-size="22" font-weight="700">READY</text>
+    <text x="28" y="124" fill="#ffd479" font-family="Arial, sans-serif" font-size="22" font-weight="700">WARN</text>
+    <text x="28" y="156" fill="#ff8c8c" font-family="Arial, sans-serif" font-size="22" font-weight="700">FAIL / BLOCKED</text>
+  </g>
+</svg>
+

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "local-review": {
+      "command": "python",
+      "args": ["-m", "review_server"]
+    },
+    "remote-evidence": {
+      "transport": "streamable-http",
+      "url": "https://example.invalid/mcp",
+      "headers": {
+        "Authorization": "${EVIDENCE_SERVER_TOKEN}"
+      }
+    }
+  }
+}
+

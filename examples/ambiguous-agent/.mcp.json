@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "remote-tools": {
+      "url": "https://example.invalid/mcp"
+    }
+  }
+}
+

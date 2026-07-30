@@ -1,0 +1,14 @@
+[project]
+name = "unsafe-agent"
+
+[policy]
+required_instruction_files = ["AGENTS.md"]
+require_explicit_approval_for = ["external_account_write"]
+
+[[capabilities]]
+id = "unbounded-publisher"
+kind = "external_account_write"
+source = ".mcp.json"
+approval = "none"
+tools = ["*"]
+

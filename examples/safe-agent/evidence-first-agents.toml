@@ -1,0 +1,25 @@
+[project]
+name = "safe-agent"
+
+[policy]
+required_instruction_files = ["AGENTS.md"]
+require_explicit_approval_for = [
+  "browser_write",
+  "external_account_write",
+  "network_write",
+]
+
+[[capabilities]]
+id = "github-read"
+kind = "external_account_read"
+source = ".mcp.json"
+approval = "not-required"
+tools = ["issues.read", "pull_requests.read"]
+
+[[capabilities]]
+id = "github-publish"
+kind = "external_account_write"
+source = ".mcp.json"
+approval = "required"
+tools = ["issues.comment"]
+

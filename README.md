@@ -186,6 +186,9 @@ Version 0.1.0 does not:
 Provider adapters and checks should be added only with realistic fixtures and a stable,
 documented failure mode.
 
+See the [public roadmap](ROADMAP.md) for the evidence gates and candidate scope for the next
+release.
+
 ## Relationship to Evidence First AI
 
 [Evidence First AI](https://github.com/ali-kin4/evidence-first-ai-project) checks whether an
@@ -204,4 +207,3 @@ Start at [AliJabbary.com](https://alijabbary.com) or email
 ## License
 
 Released under the [MIT License](LICENSE).
-

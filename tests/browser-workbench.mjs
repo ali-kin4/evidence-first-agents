@@ -21,7 +21,7 @@ async function run(){
   await page.locator(".scenario-card").first().waitFor();
   requireThat(await page.locator(".scenario-card").count()===4,"Missing workshop scenarios");
   await page.screenshot({path:dir+"/02-scenario-library.png",fullPage:true});
-  await page.locator('#scenarioSelect').selectOption("safe");
+  await page.locator('[data-case="safe"]').click();
   await page.locator("#decisionText").getByText("READY").waitFor();
   await page.locator('#scenarioSelect').selectOption("unsafe");
   await page.locator("#decisionText").getByText("FAIL").waitFor();

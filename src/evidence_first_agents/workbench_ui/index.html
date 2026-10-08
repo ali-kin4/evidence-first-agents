@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b32">
+  <meta name="description" content="Evidence First Agents — an offline, evidence-linked governance and remediation training workbench.">
+  <title>Evidence First Agents — Authority Workbench</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="app-shell">
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#overview">
+      <span class="brand-symbol" aria-hidden="true">
+        <svg viewBox="0 0 46 46" fill="none"><rect width="46" height="46" rx="14" fill="#7C6AF2"/><path d="M23 8L36 14V23C36 32 29 37 23 40C17 37 10 32 10 23V14L23 8Z" stroke="white" stroke-width="2.5"/><path d="M16 23L21 28L31 18" stroke="#8EF2D5" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-text"><strong>evidence<span>first.</span></strong><small>AGENT AUTHORITY WORKBENCH</small></span>
+    </a>
+    <span class="nav-label">WORKSPACE</span>
+    <nav class="side-links" aria-label="Workbench sections">
+      <button class="nav-link active" data-view="overview" type="button"><span class="nav-icon">▦</span>Overview</button>
+      <button class="nav-link" data-view="scenarios" type="button"><span class="nav-icon">▤</span>Scenario library</button>
+      <button class="nav-link" data-view="authority" type="button"><span class="nav-icon">◇</span>Authority map</button>
+      <button class="nav-link" data-view="findings" type="button"><span class="nav-icon">◎</span>Finding explorer <span class="nav-count" id="navFindings">0</span></button>
+      <button class="nav-link" data-view="lab" type="button"><span class="nav-icon">⚒</span>Remediation lab</button>
+    </nav>
+    <span class="nav-label nav-label-secondary">LEARNING & REFERENCE</span>
+    <nav class="side-links" aria-label="Training resources">
+      <button class="nav-link" data-view="training" type="button"><span class="nav-icon">✧</span>Training walkthrough</button>
+      <button class="nav-link" data-view="methodology" type="button"><span class="nav-icon">◈</span>Methodology</button>
+      <a class="nav-link" href="https://github.com/ali-kin4/evidence-first-agents" target="_blank" rel="noopener noreferrer"><span class="nav-icon">↗</span>Source repository</a>
+    </nav>
+    <div class="side-fill"></div>
+    <div class="side-promo">
+      <div class="promo-badge">✦ LEARN BY INSPECTING</div>
+      <h3>Turn uncertainty into clear decisions.</h3>
+      <p>Observe configurations, investigate boundaries, test proposed controls.</p>
+      <div class="promo-grid" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="side-profile"><span class="person-avatar">AJ</span><div><strong>Ali Jabbary</strong><small>AI · Engineering · Education</small></div><a href="https://alijabbary.com" target="_blank" rel="noopener noreferrer" aria-label="Visit creator website">↗</a></div>
+  </aside>
+  <div class="content-wrap">
+    <header class="topbar">
+      <div class="top-left">
+        <button class="mobile-toggle" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
+        <span class="breadcrumbs">WORKBENCH</span><span class="slash">/</span><strong id="breadcrumb">Overview</strong>
+      </div>
+      <div class="top-right">
+        <span class="local-pill"><i></i> LOCAL · NO AGENT EXECUTION</span>
+        <button id="exportReport" class="top-btn" type="button">↓ <span>Export evidence</span></button>
+        <span class="header-avatar">EF</span>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="alert" id="error" role="alert" hidden></div>
+      <section class="screen active" id="screen-overview" aria-labelledby="overviewHeading">
+        <div class="page-lead">
+          <div><div class="eyebrow">YOUR AGENT GOVERNANCE STUDIO</div><h1 id="overviewHeading">Understand the authority. <span class="spark">✳</span></h1><p class="subheading">Turn agent configuration into inspectable evidence, clear boundaries, and practical remediation.</p></div>
+          <span class="header-label">EDUCATIONAL SECURITY WORKBENCH</span>
+        </div>
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="hero-topline">✦ CONFIGURE WITH INTENTION</div>
+            <h2>Make every permission<br><em>an informed decision.</em></h2>
+            <p>Inspect the tools an agent declares, trace where approval is missing, and practice safer designs—without executing an agent.</p>
+            <button class="button button-light" type="button" data-go="lab">Explore remediation lab <span>↗</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <svg viewBox="0 0 460 280" fill="none"><ellipse cx="255" cy="137" rx="179" ry="115" stroke="white" stroke-opacity=".17" stroke-width="2"/><ellipse cx="255" cy="137" rx="119" ry="77" stroke="white" stroke-opacity=".24"/><path d="M125 178L248 91L368 160L252 220L125 178L368 160" stroke="#CFCAFF" stroke-opacity=".7" stroke-width="2" stroke-dasharray="5 7"/><circle cx="247" cy="145" r="56" fill="#fff" fill-opacity=".12" stroke="#eee" stroke-opacity=".25"/><path d="M248 99L287 117V145C287 175 270 194 248 205C225 194 208 175 208 145V117L248 99Z" fill="#fff" fill-opacity=".15" stroke="#fff" stroke-width="3"/><path d="M229 148L242 161L268 133" stroke="#A9FFE8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="125" cy="178" r="12" fill="#B4FFE6"/><circle cx="368" cy="160" r="11" fill="#DDD5FF"/><circle cx="248" cy="91" r="9" fill="#A9F7DB"/></svg>
+            <span class="art-card card-approval"><span class="mini-icon">✓</span><span>Approval boundary<small>Review before write</small></span></span>
+            <span class="art-card card-scope"><span class="mini-icon scope-icon">◈</span><span>Least privilege<small>Explicit tool scopes</small></span></span>
+            <span class="art-code">policy.check() <b>→ observed</b></span>
+          </div>
+        </div>
+        <div class="section-title"><div><div class="eyebrow">CURRENT EVIDENCE</div><h2>Configuration at a glance</h2></div><div class="scenario-selector"><label for="scenarioSelect">Explore scenario</label><select id="scenarioSelect" aria-label="Select training scenario"></select></div></div>
+        <div class="metric-grid" id="metrics" aria-live="polite"></div>
+        <div class="overview-columns">
+          <article class="panel coverage-panel">
+            <div class="panel-heading"><div><div class="eyebrow">CONTROL LANDSCAPE</div><h3>Evidence review areas</h3><p>Signals found in inspected configuration—not certifications</p></div><button class="small-link" type="button" data-go="findings">Examine findings ↗</button></div>
+            <div id="domainRows" class="domain-grid"></div>
+          </article>
+          <article class="panel decision-panel">
+            <div class="panel-heading"><div><div class="eyebrow">DETERMINISTIC ASSESSMENT</div><h3>Current scan decision</h3><p>Based on known files and declared checks</p></div></div>
+            <div id="decisionRing" class="decision-ring"><div class="decision-ring-center"><strong id="decisionText">—</strong><span>static scan</span></div></div>
+            <p id="decisionMeaning" class="decision-description"></p>
+            <button class="small-link centered-link" type="button" data-go="methodology">Understand assurance limits ↗</button>
+          </article>
+        </div>
+        <div class="overview-columns overview-bottom">
+          <article class="panel"><div class="panel-heading"><div><div class="eyebrow">REVIEW PRIORITIES</div><h3>Findings worth investigating</h3><p>Actionable observations, with boundaries and next steps</p></div><button class="small-link" type="button" data-go="findings">All findings ↗</button></div><div id="priorityFindings"></div></article>
+          <article class="panel"><div class="panel-heading"><div><div class="eyebrow">SCENARIO BRIEF</div><h3>What the agent intends to do</h3><p>Fictional business process for instruction</p></div></div><div id="workflowPreview" class="workflow-preview"></div><div class="lesson-note" id="lessonPreview"></div></article>
+        </div>
+      </section>
+      <section class="screen" id="screen-scenarios" aria-labelledby="scenariosHeading">
+        <div class="page-lead"><div><div class="eyebrow">PRACTICE LIBRARY</div><h1 id="scenariosHeading">Four decisions. Real trade-offs.</h1><p class="subheading">Explore synthetic agent configurations and practice reviewing real scanner outcomes.</p></div></div>
+        <div id="scenarioCards" class="scenario-grid"></div>
+        <div class="panel disclaimer-panel"><div class="eyebrow">WHAT THESE EXAMPLES MEAN</div><h3>Constructed for learning—not customer findings.</h3><p>All credentials are fictional; remote hostnames are reserved examples. The scenarios are rescanned from isolated files every time. No agent, MCP server, external API or shell command is executed.</p></div>
+      </section>
+      <section class="screen" id="screen-authority" aria-labelledby="authorityHeading">
+        <div class="page-lead"><div><div class="eyebrow">CONFIGURATION TOPOLOGY</div><h1 id="authorityHeading">Follow the authority.</h1><p class="subheading">See which instructions, MCP servers and declared capabilities form the agent's inspectable boundary.</p></div></div>
+        <div class="authority-layout">
+          <article class="panel authority-flow"><div class="panel-heading"><div><div class="eyebrow">DECLARATION MAP</div><h3>Authority pathways</h3><p>Discovered files and declared tool permissions</p></div></div><div id="authorityDiagram"></div><div class="diagram-note">Dashed associations represent declarations only; a scan does not prove the runtime actually exposes or blocks those operations.</div></article>
+          <aside class="panel authority-side"><div class="eyebrow">TOOL INVENTORY</div><h3>Declared capabilities</h3><div id="authorityList"></div><div class="fact-note">No tool invocation or credential validation occurs during this audit.</div></aside>
+        </div>
+      </section>
+      <section class="screen" id="screen-findings" aria-labelledby="findingsHeading">
+        <div class="page-lead"><div><div class="eyebrow">EVIDENCE EXPLORER</div><h1 id="findingsHeading">From signal to next step.</h1><p class="subheading">See the observed problem, why it matters, the remediation and what remains to be verified.</p></div></div>
+        <div class="filterbar panel"><label class="search"><span>⌕</span><input id="findingSearch" aria-label="Search findings" placeholder="Search code, finding or control..." autocomplete="off"></label><label class="filter-label">Severity <select id="severityFilter"><option value="all">All severities</option><option value="failure">Failure</option><option value="warning">Warning</option><option value="blocked">Blocked</option></select></label><span id="findingCount">—</span></div>
+        <div id="findingList" class="finding-stack"></div>
+      </section>
+      <section class="screen" id="screen-lab" aria-labelledby="labHeading">
+        <div class="page-lead"><div><div class="eyebrow">EXPERIMENT WITHOUT SIDE EFFECTS</div><h1 id="labHeading">The remediation lab.</h1><p class="subheading">Choose controls, apply them to a disposable sample copy, and compare two real deterministic scans.</p></div></div>
+        <div class="lab-columns">
+          <article class="panel lab-options"><div class="panel-heading"><div><div class="eyebrow">CONTROL DESIGN</div><h3>Choose your interventions</h3><p>Not all controls apply to every scenario.</p></div></div><div id="controlChoices" class="choice-list"></div><button id="simulateButton" type="button" class="button button-primary full">Run disposable-copy rescan <span>↗</span></button><p class="lab-hint">No files in your repository will be changed. Nothing is executed or sent to an MCP server.</p></article>
+          <section class="panel lab-results"><div class="panel-heading"><div><div class="eyebrow">ACTUAL RESCAN COMPARISON</div><h3>Before and after</h3><p>Evidence changes—not simulated risk-score reductions</p></div></div><div id="labComparison"><div class="empty-graphic"><span>⌘</span><strong>Your next experiment starts here</strong><p>Select controls and run a rescan to compare the static evidence.</p></div></div></section>
+        </div>
+        <div id="labNotes" class="panel lab-notes" hidden></div>
+      </section>
+      <section class="screen" id="screen-training" aria-labelledby="trainingHeading">
+        <div class="page-lead"><div><div class="eyebrow">FOR TRAINERS & ENGINEERING TEAMS</div><h1 id="trainingHeading">A workshop you can actually teach.</h1><p class="subheading">A repeatable 45-minute instructor-led session using the working scanner, governance evidence and remediation lab.</p></div></div>
+        <div id="trainingSteps" class="training-steps"></div>
+        <div class="panel trainer-callout"><div><div class="eyebrow">CREATED BY ALI JABBARY</div><h3>Security concepts through practical engineering.</h3><p>This workbench demonstrates reproducible scanning, authority review, human-approval design and transparent reporting. It is not a claim of security certification or of client-specific deployments.</p></div><a href="https://alijabbary.com" target="_blank" rel="noopener noreferrer" class="button button-primary">Creator website ↗</a></div>
+      </section>
+      <section class="screen" id="screen-methodology" aria-labelledby="methodHeading">
+        <div class="page-lead"><div><div class="eyebrow">EVIDENCE & LIMITATIONS</div><h1 id="methodHeading">Confidence comes from clarity.</h1><p class="subheading">Understand what can be measured with static evidence—and what still needs operational review.</p></div></div>
+        <div id="methodCards" class="method-grid"></div>
+      </section>
+    </main>
+    <footer class="footer"><span>© <span id="year"></span> <a href="https://alijabbary.com" target="_blank" rel="noopener noreferrer">Ali Jabbary</a> · Evidence First Agents</span><span>Verify the declaration. Question the assumption. ✳</span></footer>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">This local teaching dashboard requires JavaScript. The original Python CLI still works without it.</p></noscript>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

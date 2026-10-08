@@ -43,12 +43,13 @@ function navigate(view) {
 async function selectScenario(key){
   if(!catalog.scenarios.some(s=>s.id===key))return;
   current=key;
+  const initial=sample===null;
   try {
     sample=await api("/api/scenario?case="+encodeURIComponent(key));
     simulation=null;
     $("#scenarioSelect").value=key;
     renderEverything();
-    toast("Loaded fictional scenario: "+sample.story.title);
+    if(!initial)toast("Loaded fictional scenario: "+sample.story.title);
   } catch(err){showError(err.message);}
 }
 function pill(decision){return '<span class="state-pill '+safe(decision)+'">'+safe(decision.toUpperCase())+'</span>';}

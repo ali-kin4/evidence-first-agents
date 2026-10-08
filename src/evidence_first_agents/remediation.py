@@ -84,11 +84,12 @@ def _control(root: Path, control: str) -> bool:
                     if not isinstance(section, dict):
                         continue
                     for name, text in section.items():
-                        if name.lower() in ("authorization", "token", "password", "secret"):
-                            if isinstance(text, str) and not (
-                                text.startswith(("env:", "$")) or "{" in text
-                            ):
-                                section[name] = "env:DEMO_TOKEN_FROM_ENV"
+                        if (
+                            name.lower() in ("authorization", "token", "password", "secret")
+                            and isinstance(text, str)
+                            and not (text.startswith(("env:", "$")) or "{" in text)
+                        ):
+                            section[name] = "env:DEMO_TOKEN_FROM_ENV"
         if value == before:
             return False
         mcp.write_text(json.dumps(value, indent=2), encoding="utf-8")

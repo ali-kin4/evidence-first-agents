@@ -51,7 +51,7 @@ async function run(){
   const exported=await downloadPromise;
   requireThat(exported.suggestedFilename().endsWith(".json"),"Evidence export not JSON");
   await page.setViewportSize({width:390,height:844});
-  await page.reload({waitUntil:"domcontentloaded"});
+  await page.goto(URL+"#overview",{waitUntil:"domcontentloaded"});
   await page.locator(".metric-card").first().waitFor();
   await page.waitForTimeout(360);
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);

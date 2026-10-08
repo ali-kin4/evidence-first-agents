@@ -1,0 +1,45 @@
+name: Workbench browser acceptance
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install application and tests
+        run: python -m pip install -e ".[dev]"
+      - name: Install Playwright
+        run: npm install --no-save --no-package-lock playwright@1.56.1
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start localhost-only workbench
+        run: |
+          evidence-first-agents --workbench --port 8766 > /tmp/efa-workbench.log 2>&1 &
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8766/api/catalog >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/efa-workbench.log
+          exit 1
+      - name: Exercise governance UI and real remediation
+        run: node tests/browser-workbench.mjs
+      - name: Upload genuine browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: authority-workbench-screenshots
+          path: screenshots/
+          if-no-files-found: ignore

@@ -19,6 +19,8 @@ keywords = [
   "readiness",
   "security",
   "reproducibility",
+  "agent-governance",
+  "approval-boundaries",
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",

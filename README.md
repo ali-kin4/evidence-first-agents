@@ -35,6 +35,43 @@ an external write capability with no explicit approval boundary.
 
 This project turns those expectations into inspectable checks that run locally and in CI.
 
+## Authority Workbench — new interactive experience
+
+The project now includes a **local-first Agent Authority & Governance Workbench** for
+technical trainers, agent builders, governance teams and responsible-AI workshops.
+
+![Authority Workbench](assets/banner.svg)
+
+Start the interactive application **without executing any agent or connecting to MCP servers**:
+
+```bash
+python -m pip install -e ".[dev]"
+evidence-first-agents --workbench
+```
+
+Open **http://127.0.0.1:8766**. It runs only on localhost and includes four fictional
+scenarios: bounded research, ambiguous remote context, unbounded publishing, and
+customer-support/CRM automation. No API key, cloud service, or account is required.
+
+- **Instructor overview:** evidence counts, eight inspection domains, a properly scoped verdict,
+  and finding priorities that never imply static findings represent validated exploitability.
+- **Authority map:** discovered instructions, MCP servers, and explicitly declared capabilities;
+  associations describe config declarations, **not proven runtime tool authorization**.
+- **Finding explorer:** evidence code, contextual explanation, scoped risk, remediation advice,
+  independent validation requirement, and links to published security guidance.
+- **Remediation lab:** choose concrete controls, apply them to **disposable fictional files**,
+  rerun the real scanner, and compare the before/after findings.
+- **Facilitator walkthrough:** a realistic 45-minute session and evidence-export workflow.
+- **Genuine visuals:** the application is responsive HTML/CSS/JavaScript, not an image mockup.
+  Real Chromium screenshots are collected by the browser-testing workflow.
+
+The original repository scanner and all existing CLI scan commands remain available.
+A "READY" outcome, even after remediation, **never** verifies prompt-injection resistance,
+OAuth audience, remote MCP trust, actual human approvals, runtime sandboxing or production safety.
+
+Read [research and limits](docs/governance-research.md) and
+[the practical training guide](docs/workbench-training.md).
+
 ## Quick start
 
 ```bash
@@ -173,12 +210,13 @@ safe fixture.
 
 ## Current boundaries
 
-Version 0.1.0 does not:
+The deterministic scanner (and the accompanying teaching workbench) does not:
 
 - formally verify agent behavior;
 - execute an agent or inspect runtime traces;
 - parse every provider-specific configuration format;
 - detect arbitrary secrets in prose;
+- confirm simulated fixes were deployed to a real runtime;
 - prove that an approval prompt cannot be bypassed;
 - establish trust in third-party MCP servers or skills;
 - replace sandboxing, least privilege, code review, or human judgment.

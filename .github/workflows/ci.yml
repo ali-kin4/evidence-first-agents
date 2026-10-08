@@ -39,3 +39,6 @@ jobs:
       - run: python -m venv /tmp/evidence-first-agents-venv
       - run: /tmp/evidence-first-agents-venv/bin/python -m pip install dist/*.whl
       - run: /tmp/evidence-first-agents-venv/bin/evidence-first-agents examples/safe-agent
+      - name: Verify wheel contains local workbench assets
+        run: |
+          /tmp/evidence-first-agents-venv/bin/python -c "from importlib.resources import files; root=files('evidence_first_agents') / 'workbench_ui'; assert all((root / name).is_file() for name in ('index.html', 'app.js', 'style.css', 'favicon.svg'))"

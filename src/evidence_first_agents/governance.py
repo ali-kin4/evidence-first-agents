@@ -1,3 +1,4 @@
+# ruff: noqa: E501  # Guidance prose is kept as full descriptive sentences.
 """Evidence-linked governance explanations without extending static scanner claims.
 
 Rules are educational mappings of existing deterministic finding codes, not

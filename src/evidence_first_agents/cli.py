@@ -19,6 +19,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--json-out", type=Path)
     parser.add_argument("--markdown-out", type=Path)
     parser.add_argument(
+        "--workbench", action="store_true",
+        help="Open the localhost-only fictional agent-governance training workbench.",
+    )
+    parser.add_argument("--port", type=int, default=8766, help="Workbench localhost port.")
+    parser.add_argument(
         "--format",
         choices=("markdown", "json"),
         default="markdown",
@@ -29,6 +34,15 @@ def _parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.workbench:
+        from .workbench_server import serve_workbench
+
+        try:
+            serve_workbench(port=args.port)
+        except (OSError, ValueError) as exc:
+            print(f"error: {exc}", file=sys.stderr)
+            return 2
+        return 0
     try:
         report = inspect_project(args.project)
     except (AgentProjectError, OSError, ValueError) as exc:

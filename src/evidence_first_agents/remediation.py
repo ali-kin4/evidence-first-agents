@@ -32,8 +32,10 @@ def scenario_report(key: str) -> dict[str, Any]:
     if key not in SCENARIOS:
         raise ValueError("Unknown scenario")
     with tempfile.TemporaryDirectory(prefix="efa-case-") as dirname:
-        _write(Path(dirname), SCENARIOS[key]["files"])
-        report = inspect_project(dirname)
+        root = Path(dirname) / key
+        root.mkdir()
+        _write(root, SCENARIOS[key]["files"])
+        report = inspect_project(root)
     meta = SCENARIOS[key]
     return {
         "key": key, "synthetic": True, "governance": governance_view(report),
@@ -105,7 +107,8 @@ def simulate(key: str, chosen: list[str]) -> dict[str, Any]:
         raise ValueError("Duplicate control")
     before = scenario_report(key)
     with tempfile.TemporaryDirectory(prefix="efa-lab-") as dirname:
-        root = Path(dirname)
+        root = Path(dirname) / key
+        root.mkdir()
         _write(root, copy.deepcopy(SCENARIOS[key]["files"]))
         order = (
             "policy_contract", "instruction_precedence", "mcp_transport",

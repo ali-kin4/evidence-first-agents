@@ -256,6 +256,10 @@ function events(){
     $("#scrim").hidden=!expanded;$("#menuButton").setAttribute("aria-expanded",String(expanded));
   });
   $("#scrim").addEventListener("click",closeNav);
+  window.addEventListener("hashchange",()=>{
+    const next=location.hash.slice(1);
+    if(labels[next])navigate(next);
+  });
   window.addEventListener("keydown",ev=>{if(ev.key==="Escape")closeNav();});
 }
 async function init(){
